@@ -28,7 +28,7 @@ export default function resolve(id, rawopts) {
 
 	const tests = [];
 
-	// if `base` ends with `.sass`, `.scss`, or `.css`
+	// if `base` ends with `.sass`, `.scss`, `.css`, or '.pcss'
 	if (ends_with_sass_extension(base) || ends_with_css_extension(base)) {
 		// test whether `file` exists
 		tests.push(test_file(file, opts));
@@ -47,6 +47,8 @@ export default function resolve(id, rawopts) {
 			test_file(join(dir, `${base}.sass`), opts),
 			// test whether `dir/base.css` exists
 			test_file(join(dir, `${base}.css`), opts)
+			// test whether `dir/base.pcss` exists
+			test_file(join(dir, `${base}.pcss`), opts)
 		);
 
 		// if `base` does not start with `_`
@@ -58,6 +60,8 @@ export default function resolve(id, rawopts) {
 				test_file(join(dir, `_${base}.sass`), opts),
 				// test whether `dir/_base.css` exists
 				test_file(join(dir, `_${base}.css`), opts)
+				// test whether `dir/_base.pcss` exists
+				test_file(join(dir, `_${base}.pcss`), opts)
 			);
 		}
 	}
