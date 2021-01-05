@@ -46,7 +46,7 @@ export default function resolve(id, rawopts) {
 			// test whether `dir/base.sass` exists
 			test_file(join(dir, `${base}.sass`), opts),
 			// test whether `dir/base.css` exists
-			test_file(join(dir, `${base}.css`), opts)
+			test_file(join(dir, `${base}.css`), opts),
 			// test whether `dir/base.pcss` exists
 			test_file(join(dir, `${base}.pcss`), opts)
 		);
@@ -59,7 +59,7 @@ export default function resolve(id, rawopts) {
 				// test whether `dir/_base.sass` exists
 				test_file(join(dir, `_${base}.sass`), opts),
 				// test whether `dir/_base.css` exists
-				test_file(join(dir, `_${base}.css`), opts)
+				test_file(join(dir, `_${base}.css`), opts),
 				// test whether `dir/_base.pcss` exists
 				test_file(join(dir, `_${base}.pcss`), opts)
 			);
